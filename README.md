@@ -1,0 +1,143 @@
+# Site Institucional - Assessoria para Vistos Americanos
+
+Site institucional moderno e premium para agência de assessoria para emissão de vistos americanos, desenvolvido com React, TypeScript, Tailwind CSS e Framer Motion.
+
+## 🚀 Tecnologias
+
+- **React 18** + **TypeScript**
+- **Vite** - Build tool rápida
+- **Tailwind CSS** - Estilização utilitária
+- **Framer Motion** - Animações fluidas
+- **React Hook Form** - Gerenciamento de formulários
+- **Recharts** - Gráficos animados
+- **Intersection Observer API** - Animações ao scroll
+
+## 📦 Instalação
+
+```bash
+# Instalar dependências
+npm install
+
+# Iniciar servidor de desenvolvimento
+npm run dev
+
+# Build para produção
+npm run build
+
+# Preview da build
+npm run preview
+```
+
+## 🏗️ Estrutura do Projeto
+
+```
+src/
+├─ components/
+│   ├─ Hero.tsx              # Hero section com imagem do cliente e formulário
+│   ├─ EligibilityForm.tsx   # Questionário interativo em etapas
+│   ├─ AnimatedChart.tsx     # Gráficos animados com Intersection Observer
+│   ├─ StatsSection.tsx      # Seção de estatísticas e storytelling
+│   ├─ DiferenciaisSection.tsx # Seção de diferenciais com microinterações
+│   ├─ FaqSection.tsx        # Seção de FAQ com animações
+│   ├─ Navbar.tsx            # Navegação responsiva
+│   └─ Footer.tsx            # Rodapé com informações de contato
+├─ hooks/
+│   └─ useInViewAnimation.ts # Hook customizado para animações ao scroll
+├─ pages/
+│   └─ Home.tsx              # Página principal
+├─ styles/
+└─ assets/                   # Imagens e recursos estáticos
+```
+
+## 🎨 Características
+
+### Hero Section
+- Layout responsivo com grid 3-6-3 (texto-imagem-formulário)
+- Imagem do cliente posicionada na borda inferior da seção
+- Formulário de contato posicionado à direita
+- Gradiente inspirado na bandeira americana
+- Animações suaves com Framer Motion
+
+### Questionário Interativo
+- Formulário em etapas (step form)
+- Validação em tempo real
+- Barra de progresso animada
+- Cálculo simulado de elegibilidade
+- Animações suaves entre perguntas
+
+### Seções de Conteúdo
+- Gráficos animados com Intersection Observer
+- Cards com microinterações e hover effects
+- Contadores numéricos animados
+- FAQ com accordion animado
+- Storytelling visual com estatísticas
+
+### Design e UX
+- Interface moderna e profissional
+- Cores institucionais personalizáveis
+- Tipografia otimizada para legibilidade
+- Animações performáticas e suaves
+- Totalmente responsivo
+
+## 🖼️ Adicionando Imagem do Cliente
+
+Para adicionar a imagem do cliente no Hero:
+
+1. Coloque a imagem PNG recortada em `src/assets/client-image.png`
+2. No componente `Hero.tsx`, ajuste o componente `ClientImage`:
+
+```tsx
+const ClientImage = () => {
+  return (
+    <motion.img
+      src="/client-image.png"
+      alt="Cliente"
+      className="w-full h-auto object-contain object-bottom max-h-[70vh] lg:max-h-[120vh] lg:object-center lg:object-bottom"
+      style={{
+        filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3))',
+      }}
+    />
+  )
+}
+```
+
+## 🎯 Personalização
+
+### Cores
+As cores podem ser ajustadas em `tailwind.config.js`:
+- `usa-blue`: #002868
+- `usa-red`: #BF0A30
+- `usa-light-blue`: #1E3A8A
+
+### Conteúdo
+Todos os textos e dados podem ser facilmente modificados nos componentes correspondentes.
+
+## 📱 Responsividade
+
+O site é totalmente responsivo e otimizado para:
+- Desktop (1920px+)
+- Tablet (768px - 1919px)
+- Mobile (320px - 767px)
+
+## 🔧 Scripts Disponíveis
+
+- `npm run dev` - Inicia servidor de desenvolvimento
+- `npm run build` - Cria build de produção
+- `npm run preview` - Preview da build de produção
+- `npm run lint` - Executa o linter
+
+## 🌐 Deploy
+
+O projeto está pronto para deploy em plataformas como:
+- Vercel
+- Netlify
+- GitHub Pages
+- Qualquer serviço de hosting estático
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para uso comercial.
+
+---
+
+**Desenvolvido com ❤️ para assessoria de vistos americanos**
