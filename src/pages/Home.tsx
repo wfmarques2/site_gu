@@ -67,7 +67,7 @@ const Home = () => {
     return (
       <div
         ref={containerRef}
-        className="rounded-xl overflow-hidden shadow-lg bg-black max-w-[220px] sm:max-w-[240px] lg:max-w-[260px] mx-auto relative"
+        className="rounded-xl overflow-hidden shadow-lg bg-black max-w-[200px] sm:max-w-[220px] lg:max-w-[240px] mx-auto relative"
         style={{ aspectRatio: '9 / 16' }}
       >
         <video
@@ -122,7 +122,7 @@ const Home = () => {
                 Conheça profissionais e empresários que transformaram suas carreiras com nossa ajuda
               </p>
             </motion.div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
               {visibleTestimonials.map((v, idx) => (
                 <motion.div
                   key={idx}
