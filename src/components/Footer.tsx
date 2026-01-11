@@ -1,4 +1,4 @@
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaFacebook, FaInstagram} from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 /**
