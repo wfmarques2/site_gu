@@ -11,6 +11,7 @@ Site institucional moderno e premium para agência de assessoria para emissão d
 - **React Hook Form** - Gerenciamento de formulários
 - **Recharts** - Gráficos animados
 - **Intersection Observer API** - Animações ao scroll
+- **Material UI (MUI)** + **Emotion** — Biblioteca de componentes e theming
 
 ## 📦 Instalação
 
@@ -79,39 +80,6 @@ src/
 - Animações performáticas e suaves
 - Totalmente responsivo
 
-## 🖼️ Adicionando Imagem do Cliente
-
-Para adicionar a imagem do cliente no Hero:
-
-1. Coloque a imagem PNG recortada em `src/assets/client-image.png`
-2. No componente `Hero.tsx`, ajuste o componente `ClientImage`:
-
-```tsx
-const ClientImage = () => {
-  return (
-    <motion.img
-      src="/client-image.png"
-      alt="Cliente"
-      className="w-full h-auto object-contain object-bottom max-h-[70vh] lg:max-h-[120vh] lg:object-center lg:object-bottom"
-      style={{
-        filter: 'drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3))',
-      }}
-    />
-  )
-}
-```
-
-## 🎯 Personalização
-
-### Cores
-As cores podem ser ajustadas em `tailwind.config.js`:
-- `usa-blue`: #002868
-- `usa-red`: #BF0A30
-- `usa-light-blue`: #1E3A8A
-
-### Conteúdo
-Todos os textos e dados podem ser facilmente modificados nos componentes correspondentes.
-
 ## 📱 Responsividade
 
 O site é totalmente responsivo e otimizado para:
@@ -126,18 +94,10 @@ O site é totalmente responsivo e otimizado para:
 - `npm run preview` - Preview da build de produção
 - `npm run lint` - Executa o linter
 
-## 🌐 Deploy
-
-O projeto está pronto para deploy em plataformas como:
-- Vercel
-- Netlify
-- GitHub Pages
-- Qualquer serviço de hosting estático
-
 ## 📄 Licença
 
 Este projeto foi desenvolvido para uso comercial.
 
 ---
 
-**Desenvolvido com ❤️ para assessoria de vistos americanos**
+**Desenvolvido para Gustavo Rios Vistos Americanos**

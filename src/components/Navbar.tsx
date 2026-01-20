@@ -21,7 +21,10 @@ const Navbar = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const headerOffset = 96
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+      const offsetPosition = elementPosition - headerOffset
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
       setIsMobileMenuOpen(false)
     }
   }
@@ -186,6 +189,10 @@ const Navbar = () => {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
+                  onTouchStart={(e) => {
+                    e.preventDefault()
+                    scrollToSection(item.id)
+                  }}
                   whileHover={{ scale: 1.02, x: 5 }}
                   whileTap={{ scale: 0.98 }}
                   className="block w-full text-left text-gray-700 hover:text-usa-blue transition-all duration-300 font-medium py-3 px-4 rounded-lg hover:bg-usa-blue/5"
@@ -201,10 +208,10 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="flex items-center gap-3 w-full bg-green-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-600 transition-all duration-300 shadow-lg"
+                  className="flex items-center justify-center gap-3 w-full bg-green-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-600 transition-all duration-300 shadow-lg"
                 >
                   <FaWhatsapp />
-                  <span>WhatsApp</span>
+                  <span className="text-center">WhatsApp</span>
                 </motion.a>
                 
                 <motion.a

@@ -69,12 +69,12 @@ const Hero = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="mb-4"
+              className="mb-4 flex justify-center lg:justify-start"
             >
               <img
                 src="/logo.png"
                 alt="Logo"
-                className="h-28 w-auto"
+                className="h-28 w-auto mx-auto lg:mx-0"
               />
             </motion.div>
 
