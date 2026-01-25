@@ -65,7 +65,7 @@ const Navbar = () => {
                 textShadow: isScrolled ? 'none' : '0 2px 4px rgba(0,0,0,0.3)'
               }}
             >
-              VisaAssessoria
+              Visto Americano
             </span>
           </motion.div>
 
