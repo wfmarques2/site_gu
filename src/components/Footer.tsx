@@ -118,7 +118,7 @@ const Footer = () => {
                   href="tel:+5511956291163"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  +55 (11) 95629-1163
+                  +55 (11) 9995-90598
                 </a>
               </li>
               <li className="flex items-start space-x-3">
