@@ -22,7 +22,7 @@ const Footer = () => {
                 alt="Logo"
                 className="h-8 w-auto"
               />
-              <h3 className="text-2xl font-bold">VisaAssessoria</h3>
+              <h3 className="text-2xl font-bold">Gustavo Rios Visto Americano</h3>
             </div>
             <p className="text-gray-300 mb-4">
               Sua assessoria especializada para obtenção de visto americano.
@@ -106,10 +106,10 @@ const Footer = () => {
               <li className="flex items-center space-x-3">
                 <FaEnvelope className="text-yellow-300" />
                 <a
-                  href="mailto:contato@visaassessoria.com"
+                  href="mailto:gustavosriosvisa@gmail.com"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  contato@visaassessoria.com
+                  gustavosriosvisa@gmail.com
                 </a>
               </li>
               <li className="flex items-center space-x-3">
