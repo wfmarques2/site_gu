@@ -108,7 +108,7 @@ const Navbar = () => {
               </div>
               
               <motion.a
-                href="https://wa.me/5511956291163?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20para%20emitir%20um%20visto"
+                href="https://wa.me/5511999590598?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20para%20emitir%20um%20visto"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, boxShadow: '0 8px 25px rgba(0, 40, 104, 0.3)' }}
@@ -124,7 +124,7 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center gap-4">
             {/* Mobile CTA */}
             <motion.a
-              href="https://wa.me/5511956291163"
+              href="https://wa.me/5511999590598"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
@@ -203,7 +203,7 @@ const Navbar = () => {
               
               <div className="pt-4 border-t border-gray-200 space-y-3">
                 <motion.a
-                  href="https://wa.me/5511956291163"
+                  href="https://wa.me/5511999590598"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
@@ -215,7 +215,7 @@ const Navbar = () => {
                 </motion.a>
                 
                 <motion.a
-                  href="https://wa.me/5511956291163?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20para%20emitir%20um%20visto"
+                  href="https://wa.me/5511999590598?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20para%20emitir%20um%20visto"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02, boxShadow: '0 8px 25px rgba(0, 40, 104, 0.3)' }}
