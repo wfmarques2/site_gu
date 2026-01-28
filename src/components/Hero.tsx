@@ -21,7 +21,7 @@ const Hero = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<HeroFormData>()
 
   const onSubmit = (data: HeroFormData) => {
-    const number = '5511956291163'
+    const number = '5511999590598'
     const msg = `Olá! Meu nome é ${data.nome}. E-mail: ${data.email}. Telefone: ${data.telefone}. Formação: ${data.formacao}. Passaporte: ${data.passaporte}. Gostaria de ajuda para emitir meu Visto.`
     const appUrl = `whatsapp://send?phone=${number}&text=${encodeURIComponent(msg)}`
     const webUrl = `https://wa.me/${number}?text=${encodeURIComponent(msg)}`
@@ -118,7 +118,7 @@ const Hero = () => {
 
             {/* CTA Button */}
             <motion.a
-              href="https://wa.me/5511956291163?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20para%20emitir%20um%20visto"
+              href="https://wa.me/5511999590598?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20para%20emitir%20um%20visto"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}
