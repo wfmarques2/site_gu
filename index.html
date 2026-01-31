@@ -2,7 +2,11 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="shortcut icon" href="/favicon-32.png" type="image/png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gustavo Rios | Visto Americano | Consultoria Especializada</title>
     <meta name="description" content="Consultoria especializada para Visto Americano. Atendemos Brasil com escritórios em Florianópolis e São Paulo. Fale com um especialista e conquiste seu visto." />
@@ -53,6 +57,32 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://gustavovisto.com.br/",
+        "name": "Gustavo Rios Vistos",
+        "logo": "https://gustavovisto.com.br/logo.png",
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61578701918461",
+          "https://www.instagram.com/oficialgustavorios/"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Gustavo Rios Vistos",
+        "url": "https://gustavovisto.com.br/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://gustavovisto.com.br/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -62,7 +92,5 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
-
 
 
