@@ -25,12 +25,8 @@ const Hero = () => {
   const onSubmit = (data: HeroFormData) => {
     const number = '5511999590598'
     const msg = `Olá! Meu nome é ${data.nome}. E-mail: ${data.email}. Telefone: ${data.telefone}. Renda mensal: ${data.renda}. Passaporte: ${data.passaporte}. Gostaria de um visto, pode me ajudar?`
-    const appUrl = `whatsapp://send?phone=${number}&text=${encodeURIComponent(msg)}`
     const webUrl = `https://wa.me/${number}?text=${encodeURIComponent(msg)}`
-    window.location.href = appUrl
-    setTimeout(() => {
-      window.open(webUrl, '_blank')
-    }, 1200)
+    window.open(webUrl, '_blank', 'noopener,noreferrer')
   }
 
   return (
