@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaWhatsapp, FaCheckCircle } from 'react-icons/fa'
+import { FaInstagram, FaCheckCircle } from 'react-icons/fa'
 
 /**
  * Navbar responsiva com navegação suave
@@ -135,7 +135,7 @@ const Navbar = () => {
                   : 'bg-white/20 backdrop-blur-sm text-white border border-white/30'
               }`}
             >
-              <FaWhatsapp size={20} />
+              <FaInstagram size={20} />
             </motion.a>
             
             <button
@@ -208,10 +208,10 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="flex items-center justify-center gap-3 w-full bg-green-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-green-600 transition-all duration-300 shadow-lg"
+                  className="flex items-center justify-center gap-3 w-full bg-usa-blue text-white px-6 py-3 rounded-xl font-bold hover:bg-usa-light-blue transition-all duration-300 shadow-lg"
                 >
-                  <FaWhatsapp />
-                  <span className="text-center">WhatsApp</span>
+                  <FaInstagram />
+                  <span className="text-center">Instagram</span>
                 </motion.a>
                 
                 <motion.a
