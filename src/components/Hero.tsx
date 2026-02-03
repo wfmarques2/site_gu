@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { FaArrowRight, FaCheckCircle, FaShieldAlt } from 'react-icons/fa'
 // Import da imagem do cliente
@@ -13,16 +14,17 @@ type HeroFormData = {
   email: string
   nome: string
   telefone: string
-  formacao: string
+  renda: string
   passaporte: string
 }
 
 const Hero = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<HeroFormData>()
+  const { register, handleSubmit, formState: { errors }, setValue } = useForm<HeroFormData>({ defaultValues: { renda: 'R$ 0,00' } })
+  const [rendaDisplay, setRendaDisplay] = useState('R$ 0,00')
 
   const onSubmit = (data: HeroFormData) => {
     const number = '5511999590598'
-    const msg = `Olá! Meu nome é ${data.nome}. E-mail: ${data.email}. Telefone: ${data.telefone}. Formação: ${data.formacao}. Passaporte: ${data.passaporte}. Gostaria de ajuda para emitir meu Visto.`
+    const msg = `Olá! Meu nome é ${data.nome}. E-mail: ${data.email}. Telefone: ${data.telefone}. Renda mensal: ${data.renda}. Passaporte: ${data.passaporte}. Gostaria de ajuda para emitir meu Visto.`
     const appUrl = `whatsapp://send?phone=${number}&text=${encodeURIComponent(msg)}`
     const webUrl = `https://wa.me/${number}?text=${encodeURIComponent(msg)}`
     window.location.href = appUrl
@@ -118,7 +120,7 @@ const Hero = () => {
 
             {/* CTA Button */}
             <motion.a
-              href="https://wa.me/5511999590598?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20para%20emitir%20um%20visto"
+              href="https://www.instagram.com/gustavoriosvisto/"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -252,21 +254,30 @@ const Hero = () => {
                   )}
                 </div>
 
-                {/* Formação */}
+                {/* Renda mensal */}
                 <div>
                   <label className="block text-gray-700 font-medium mb-1 text-xs">
-                    Qual é a sua formação acadêmica?
+                    Qual é a sua renda mensal?
                   </label>
                   <input
                     type="text"
-                    {...register('formacao', {
-                      required: 'Formação é obrigatória',
+                    {...register('renda', {
+                      required: 'Renda é obrigatória',
                     })}
-                    placeholder="Digite sua formação"
+                    value={rendaDisplay}
+                    onChange={(e) => {
+                      const digits = e.target.value.replace(/\D/g, '')
+                      const value = Number(digits) / 100
+                      const formatted = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+                      setRendaDisplay(formatted)
+                      setValue('renda', formatted, { shouldValidate: true })
+                    }}
+                    inputMode="numeric"
+                    placeholder="R$ 0,00"
                     className="w-full px-3 py-2 border border-gray-200 rounded-md focus:border-usa-blue focus:outline-none transition-colors text-xs"
                   />
-                  {errors.formacao && (
-                    <p className="text-red-500 text-[10px] mt-0.5">{errors.formacao.message}</p>
+                  {errors.renda && (
+                    <p className="text-red-500 text-[10px] mt-0.5">{errors.renda.message}</p>
                   )}
                 </div>
 
