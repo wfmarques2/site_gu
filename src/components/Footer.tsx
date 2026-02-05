@@ -135,7 +135,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-white/20 pt-8 text-center text-gray-300">
-          <p>&copy; {new Date().getFullYear()} VisaAssessoria. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Gustavo Rios - Visto Americano. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

@@ -206,18 +206,6 @@ const Navbar = () => {
                   href="https://www.instagram.com/gustavoriosvisto/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="flex items-center justify-center gap-3 w-full bg-usa-blue text-white px-6 py-3 rounded-xl font-bold hover:bg-usa-light-blue transition-all duration-300 shadow-lg"
-                >
-                  <FaInstagram />
-                  <span className="text-center">Instagram</span>
-                </motion.a>
-                
-                <motion.a
-                  href="https://www.instagram.com/gustavoriosvisto/"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.02, boxShadow: '0 8px 25px rgba(0, 40, 104, 0.3)' }}
                   whileTap={{ scale: 0.98 }}
                   className="block w-full text-center bg-gradient-to-r from-usa-blue to-usa-light-blue text-white px-6 py-3 rounded-xl font-bold hover:from-usa-light-blue hover:to-usa-blue transition-all duration-300 shadow-lg cursor-pointer"
