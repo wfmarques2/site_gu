@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased transition-colors duration-500;
+  }
+
+  ::selection {
+    background-color: rgba(0, 40, 104, 0.3);
+    color: #002868;
+  }
+}
+
+.dark body {
+  background-color: #0B1120;
+  color: #E5E7EB;
+}
+
+.dark ::selection {
+  background-color: rgba(250, 204, 21, 0.3);
+  color: #fde047;
+}
+
+@layer utilities {
+  .gradient-usa {
+    background: linear-gradient(135deg, #002868 0%, #1E3A8A 50%, #BF0A30 100%);
+  }
+
+  .text-shadow-sm {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
