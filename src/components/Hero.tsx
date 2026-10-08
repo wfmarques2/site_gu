@@ -141,7 +141,7 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="flex justify-center relative z-10 lg:col-span-4 order-2 lg:order-2 mt-auto"
           >
-            <div className="relative w-full max-w-2xl sm:max-w-3xl lg:w-[280%] lg:max-w-none lg:-ml-[130%] lg:-mb-10" style={{ transform: 'translateX(200px)' }}>
+            <div className="relative w-full max-w-2xl sm:max-w-3xl mx-auto sm:mx-auto lg:mx-0 lg:w-[280%] lg:max-w-none lg:-ml-[130%] lg:-mb-10 lg:translate-x-[200px]">
                 <ClientImage />
             </div>
           </motion.div>
