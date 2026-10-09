@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaArrowRight, FaArrowLeft, FaCheck } from 'react-icons/fa'
+import { useContactModal } from '../contexts/ContactModalContext'
 
 /**
  * Questionário interativo em etapas para avaliação de elegibilidade
@@ -22,6 +23,7 @@ const visaTypes = [
 ]
 
 const EligibilityForm = () => {
+  const { openModal } = useContactModal()
   const [currentStep, setCurrentStep] = useState(1)
   const [eligibilityResult, setEligibilityResult] = useState<number | null>(null)
   const totalSteps = 3
@@ -298,16 +300,15 @@ const EligibilityForm = () => {
                       Entre em contato conosco para uma análise completa e personalizada do seu caso.
                     </p>
 
-                    <motion.a
-                      href="https://wa.me/5511999590598?text=Olá%2C%20gostaria%20de%20mais%20informações%20sobre%20a%20emissão%20do%20visto%20americano."
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <motion.button
+                      type="button"
+                      onClick={openModal}
                       whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(0, 40, 104, 0.3)' }}
                       whileTap={{ scale: 0.95 }}
                       className="inline-block bg-gradient-to-r from-usa-blue to-usa-light-blue text-white px-10 py-4 rounded-xl text-lg font-bold hover:from-usa-light-blue hover:to-usa-blue transition-all duration-300 shadow-xl border-2 border-transparent hover:border-yellow-400"
                     >
                       Falar com Especialista
-                    </motion.a>
+                    </motion.button>
                   </motion.div>
                 )}
               </AnimatePresence>

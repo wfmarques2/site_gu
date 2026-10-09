@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion'
 import { FaWhatsapp } from 'react-icons/fa'
+import { useContactModal } from '../contexts/ContactModalContext'
 
 const WhatsAppButton = () => {
+  const { openModal } = useContactModal()
+
   return (
-    <motion.a
-      href="https://wa.me/5511999590598?text=Olá%2C%20gostaria%20de%20mais%20informações%20sobre%20a%20emissão%20do%20visto%20americano."
-      target="_blank"
-      rel="noopener noreferrer"
+    <motion.button
+      type="button"
+      onClick={openModal}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1, type: 'spring', stiffness: 260, damping: 20 }}
@@ -19,7 +21,7 @@ const WhatsAppButton = () => {
       <span className="absolute right-full mr-3 bg-white dark:bg-dark-card text-gray-800 dark:text-dark-text px-3 py-1 rounded-lg text-sm font-medium shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none hidden md:block border border-gray-100 dark:border-dark-border">
         Fale conosco
       </span>
-    </motion.a>
+    </motion.button>
   )
 }
 

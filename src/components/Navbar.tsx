@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaWhatsapp, FaCheckCircle } from 'react-icons/fa'
 import ThemeToggle from './ThemeToggle'
+import { useContactModal } from '../contexts/ContactModalContext'
 
 /**
  * Navbar responsiva com navegação suave
  * Inclui scroll spy, menu mobile e toggle de tema
  */
 const Navbar = () => {
+  const { openModal } = useContactModal()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -109,16 +111,15 @@ const Navbar = () => {
 
               <ThemeToggle isScrolled={isScrolled} />
 
-              <motion.a
-                href="https://wa.me/5511999590598?text=Olá%2C%20gostaria%20de%20mais%20informações%20sobre%20a%20emissão%20do%20visto%20americano."
-                target="_blank"
-                rel="noopener noreferrer"
+              <motion.button
+                type="button"
+                onClick={openModal}
                 whileHover={{ scale: 1.05, boxShadow: '0 8px 25px rgba(0, 40, 104, 0.3)' }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-usa-blue to-usa-light-blue text-white px-6 py-3 rounded-xl font-bold hover:from-usa-light-blue hover:to-usa-blue transition-all duration-300 shadow-lg border-2 border-transparent hover:border-yellow-400 cursor-pointer"
               >
                 Falar com Especialista
-              </motion.a>
+              </motion.button>
             </motion.div>
           </div>
 
@@ -127,10 +128,9 @@ const Navbar = () => {
             <ThemeToggle isScrolled={isScrolled} />
 
             {/* Mobile CTA */}
-            <motion.a
-              href="https://wa.me/5511999590598?text=Olá%2C%20gostaria%20de%20mais%20informações%20sobre%20a%20emissão%20do%20visto%20americano."
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.button
+              type="button"
+              onClick={openModal}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className={`p-3 rounded-full transition-all duration-300 ${
@@ -140,7 +140,7 @@ const Navbar = () => {
               }`}
             >
               <FaWhatsapp size={20} />
-            </motion.a>
+            </motion.button>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -206,16 +206,18 @@ const Navbar = () => {
               ))}
 
               <div className="pt-4 border-t border-gray-200 dark:border-dark-border space-y-3">
-                <motion.a
-                  href="https://wa.me/5511999590598?text=Olá%2C%20gostaria%20de%20mais%20informações%20sobre%20a%20emissão%20do%20visto%20americano."
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <motion.button
+                  type="button"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false)
+                    openModal()
+                  }}
                   whileHover={{ scale: 1.02, boxShadow: '0 8px 25px rgba(0, 40, 104, 0.3)' }}
                   whileTap={{ scale: 0.98 }}
                   className="block w-full text-center bg-gradient-to-r from-usa-blue to-usa-light-blue text-white px-6 py-3 rounded-xl font-bold hover:from-usa-light-blue hover:to-usa-blue transition-all duration-300 shadow-lg cursor-pointer"
                 >
                   Falar com Especialista
-                </motion.a>
+                </motion.button>
               </div>
             </div>
           </motion.div>
