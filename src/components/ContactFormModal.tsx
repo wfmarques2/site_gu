@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { FaArrowRight, FaCheckCircle, FaShieldAlt, FaTimes } from 'react-icons/fa'
+import { FaArrowRight, FaCheckCircle, FaShieldAlt, FaTimes, FaWhatsapp } from 'react-icons/fa'
 import { useContactModal } from '../contexts/ContactModalContext'
 
 export type HeroFormData = {
@@ -74,16 +74,43 @@ const ContactFormModal = () => {
 
               <div className="bg-white/95 dark:bg-dark-card/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 dark:border-dark-border overflow-hidden">
                 <div className="bg-gradient-to-r from-usa-blue to-usa-light-blue dark:from-dark-surface dark:to-dark-card p-5 sm:p-6 border-b border-white/10 dark:border-dark-border">
-                  <h3
-                    id="contact-modal-title"
-                    className="text-white dark:text-yellow-400 text-lg sm:text-xl font-bold flex items-center gap-2"
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex-1">
+                      <h3
+                        id="contact-modal-title"
+                        className="text-white dark:text-yellow-400 text-lg sm:text-xl font-bold flex items-center gap-2"
+                      >
+                        <FaCheckCircle className="text-yellow-300 dark:text-yellow-400" />
+                        Fale com um Especialista
+                      </h3>
+                      <p className="text-white/90 dark:text-dark-muted text-sm mt-1">
+                        Preencha o formulário e receba uma análise gratuita
+                      </p>
+                    </div>
+                    <motion.div
+                      initial={{ scale: 0, rotate: -20 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ type: 'spring', stiffness: 260, damping: 18 }}
+                      className="flex-shrink-0 flex flex-col items-center justify-center gap-1 bg-[#25D366] dark:bg-yellow-400 px-3 py-2 rounded-xl shadow-lg"
+                    >
+                      <FaWhatsapp className="text-white dark:text-dark-bg text-xl" />
+                      <span className="text-[10px] sm:text-xs font-bold text-white dark:text-dark-bg whitespace-nowrap">
+                        via WhatsApp
+                      </span>
+                    </motion.div>
+                  </div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.15, duration: 0.3 }}
+                    className="mt-4 bg-white/15 dark:bg-yellow-400/10 border border-white/20 dark:border-yellow-400/30 rounded-lg px-3 py-2 flex items-start gap-2"
                   >
-                    <FaCheckCircle className="text-yellow-300 dark:text-yellow-400" />
-                    Fale com um Especialista
-                  </h3>
-                  <p className="text-white/90 dark:text-dark-muted text-sm mt-1">
-                    Preencha o formulário e receba uma análise gratuita
-                  </p>
+                    <FaWhatsapp className="text-yellow-300 dark:text-yellow-400 mt-0.5 text-sm flex-shrink-0" />
+                    <p className="text-[11px] sm:text-xs text-white/95 dark:text-dark-text leading-snug">
+                      Ao enviar, você será <strong>redirecionado diretamente para o WhatsApp</strong> com todos os seus dados já preenchidos na mensagem. É só clicar em enviar lá também!
+                    </p>
+                  </motion.div>
                 </div>
 
                 <form
@@ -294,14 +321,17 @@ const ContactFormModal = () => {
                       <label className="block text-gray-700 dark:text-dark-text font-medium mb-1 text-xs">
                         Você já possui passaporte?
                       </label>
-                      <input
-                        type="text"
+                      <select
                         {...register('passaporte', {
                           required: 'Por favor, informe se possui passaporte',
                         })}
-                        placeholder="Você possui passaporte?"
-                        className="w-full px-3 py-2 border border-gray-200 dark:border-dark-border rounded-md focus:border-usa-blue dark:focus:border-yellow-400 focus:outline-none transition-colors text-xs bg-white/50 dark:bg-dark-surface/80 text-gray-800 dark:text-dark-text placeholder-gray-400 dark:placeholder-dark-muted"
-                      />
+                        className="w-full px-3 py-2 border border-gray-200 dark:border-dark-border rounded-md focus:border-usa-blue dark:focus:border-yellow-400 focus:outline-none transition-colors text-xs bg-white/50 dark:bg-dark-surface/80 text-gray-800 dark:text-dark-text appearance-none"
+                        defaultValue=""
+                      >
+                        <option value="" disabled>Selecione Sim ou Não</option>
+                        <option value="Sim">Sim, já possuo passaporte</option>
+                        <option value="Não">Não, ainda não possuo passaporte</option>
+                      </select>
                       {errors.passaporte && (
                         <p className="text-red-500 text-[10px] mt-0.5">{errors.passaporte.message}</p>
                       )}
@@ -311,11 +341,24 @@ const ContactFormModal = () => {
                       type="submit"
                       whileHover={{ scale: 1.02, boxShadow: '0 8px 25px rgba(0, 40, 104, 0.3)' }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full bg-gradient-to-r from-usa-blue to-usa-light-blue text-white px-6 py-4 rounded-lg font-bold hover:from-usa-light-blue hover:to-usa-blue transition-all duration-300 flex items-center justify-center space-x-2 mt-4 text-sm shadow-lg border border-transparent"
+                      className="w-full bg-gradient-to-r from-[#25D366] to-[#22c55e] dark:from-yellow-400 dark:to-yellow-500 text-white dark:text-dark-bg px-6 py-4 rounded-lg font-bold hover:from-[#22c55e] hover:to-[#16a34a] dark:hover:from-yellow-300 dark:hover:to-yellow-400 transition-all duration-300 flex items-center justify-center gap-2 mt-4 text-sm shadow-lg border border-transparent ring-2 ring-[#25D366]/30 dark:ring-yellow-400/30"
                     >
-                      <span>Enviar análise gratuita</span>
-                      <FaArrowRight className="text-yellow-300" />
+                      <FaWhatsapp className="text-lg" />
+                      <span>Enviar e Abrir WhatsApp</span>
+                      <FaArrowRight className="text-white/90 dark:text-dark-bg/80" />
                     </motion.button>
+
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.2, duration: 0.3 }}
+                      className="text-[11px] sm:text-xs text-center text-gray-600 dark:text-dark-muted mt-3 flex items-center justify-center gap-1.5"
+                    >
+                      <FaWhatsapp className="text-[#25D366] dark:text-yellow-400" />
+                      <span>
+                        Abre direto o chat com especialista — dados já na mensagem
+                      </span>
+                    </motion.p>
 
                     <div className="mt-4 pt-4 border-t border-gray-200 dark:border-dark-border">
                       <p className="text-xs text-gray-500 dark:text-dark-muted text-center flex items-center justify-center gap-2">
